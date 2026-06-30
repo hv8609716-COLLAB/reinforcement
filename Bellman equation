@@ -1,1 +1,21 @@
+gamma = 0.9
+
+# reward
+rewards = {
+    "goal":10,
+    "mid":5,
+    "start":0
+}
+
+# initial
+v = {
+    "goal":10,
+    "mid":0,
+    "start":0
+}
+
+# Bellman Update
+v["mid"] = rewards["mid"] + gamma * v["goal"]
+v["start"] = rewards["start"] + gamma * v["mid"]
+print(v)
 
